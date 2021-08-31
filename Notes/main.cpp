@@ -4,7 +4,7 @@ using namespace std;
 int main() {
 
     int a = 5, b = 3, c;
-    c = a ^ b;
+    c = a | b;
     cout << c;
 
 /*    a = 101
