@@ -9,9 +9,8 @@ bool resolverSudoku(int [][N]);
 bool usadoEnFila(int [][N], int, int);
 bool usadoEnColumna(int [][N], int, int);
 bool usadoEnSubMatriz(int [][N], int, int, int);
-bool estaVacio(int [][N], int&, int& );
+bool estaVacio(int [][N], int &, int &);
 bool esSeguro(int [][N], int, int, int);
-
 
 int main() {
 
@@ -70,11 +69,11 @@ void separarColumna() {
 
 bool resolverSudoku(int matriz[N][N]) {
     int fila, columna;
-
     // busca una casilla vacía.
-    if (!estaVacio(matriz, fila, columna))
+    if (!estaVacio(matriz, fila, columna)) {
         // si no hay regresa verdadero
         return true;
+    }
 
     //para los dígitos del 1 al 9
     for (int num = 1; num <= 9; num++) {
@@ -85,10 +84,11 @@ bool resolverSudoku(int matriz[N][N]) {
             if (resolverSudoku(matriz)) {
                 //si la recursion fue exitosa
                 return true;
-                // si no, vacia la casilla y trata con otro número.
+                // si no, vacía la casilla y trata con otro número.
             } else matriz[fila][columna] = 0;
         }
     }
+
     //regresamos falso si todos los digitos han sido intentados y no
     //se ha logrado llenar las casillas.
     return false;
@@ -137,6 +137,5 @@ bool usadoEnSubMatriz(int subMatriz[N][N], int filaInicio, int columnaInicio, in
 bool esSeguro(int matriz[N][N], int fila, int columna, int num) {
     return !usadoEnFila(matriz, fila, num)
            && !usadoEnColumna(matriz, columna, num)
-           && !usadoEnSubMatriz(matriz, fila - (fila % 3), columna - (columna % 3), num)
-           && matriz[fila][columna] == 0;
+           && !usadoEnSubMatriz(matriz, fila - (fila % 3), columna - (columna % 3), num);
 }
