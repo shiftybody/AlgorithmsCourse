@@ -1,7 +1,6 @@
 #include <iostream>
-
 using namespace std;
-#define N 8
+#define N 4
 
 void imprimirTablero(int[][N]);
 void resolverTablero(int[][N], int);
@@ -16,7 +15,7 @@ int main() {
     nuevoTablero(tablero);
 
     resolverTablero(tablero, 0);
-    cout << endl << "El total de soluciones posibles es:" << contador ;
+    cout << endl << "El total de soluciones posibles es:" << contadorSoluciones;
 
 }
 
@@ -74,8 +73,6 @@ bool valido(int tablero[][N], int fila, int col) {
 
     return true;
 }
-
-bool
 
 
 
