@@ -41,7 +41,8 @@ void imprimirTablero(int tablero[][N]) {
 }
 
 // función recursiva
-void resolverTablero(int tablero[][N], int col) {
+void resolverTablero(int tablero[][N], int columna) {
+
 
     //para cada una de las filas desde 0 hasta < N
     for (int fila = 0; fila < N; fila++) {
@@ -49,15 +50,15 @@ void resolverTablero(int tablero[][N], int col) {
         // fila del contador y la columna recibida por la función.
 
         // Si no rompe alguna regla
-        if (esValido(tablero, fila, col)) {
+        if (esValido(tablero, fila, columna)) {
             // colocamos una reina en el índice actual
-            tablero[fila][col] = 1;
+            tablero[fila][columna] = 1;
             //si aún no llegamos al último indice de la columna
             // = no haber colocado las 8 reinas
-            if (col < N - 1) {
+            if (columna < N - 1 ) {
                 //procede a colocar la siguiente reina
                 //enviando el índice de la columna
-                resolverTablero(tablero, col + 1);
+                resolverTablero(tablero, columna + 1);
             } else {
                 // cuenta el número de veces que se ha llegado
                 // a un tablero con solución valida
@@ -70,7 +71,7 @@ void resolverTablero(int tablero[][N], int col) {
             }
             // si colocar una reina no conduce
             // a una solución la eliminamos
-            tablero[fila][col] = 0;
+            tablero[fila][columna] = 0;
         }
         //pasamos a la siguiente fila
     }
@@ -105,7 +106,6 @@ bool reinasTranversales(int tablero[][N], int filaActual, int columnaActual) {
         if (tablero[iFila][iColumna] == 1) {
             return true;
         }
-
     //Comenzamos desde la fila,columna actual; el indiceFila subira hasta llegar a la octava fila (= indice 7 || <=N)
     // y el indiceColumna bajara hasta llegar al indice 0.
     for (int iFila = filaActual, iColumna = columnaActual; iFila < N && iColumna >= 0; iFila++, iColumna--) {
