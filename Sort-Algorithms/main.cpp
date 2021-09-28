@@ -116,6 +116,18 @@ void CountingSort(int arr[], int n) {
     delete[] B;
 }
 
+void insertionSort(int array[], int size) {
+    for (int pivote = 1; pivote < size; pivote++) {
+        int posActual = pivote;
+        for (int numIzq = pivote; numIzq >= 0; numIzq--) {
+            if (array[numIzq] > array[posActual]) {
+                swap(array[numIzq], array[posActual]);
+                posActual = numIzq;
+            }
+        }
+    }
+}
+
 
 void printArray(int arr[], int size) {
     int i;
@@ -137,6 +149,8 @@ int main() {
     mergeSort(arr, 0, 6);
     printArray(arr, n);
     CountingSort(arr, n);
+    printArray(arr, n);
+    insertionSort(arr, n);
     printArray(arr, n);
     return 0;
 }
