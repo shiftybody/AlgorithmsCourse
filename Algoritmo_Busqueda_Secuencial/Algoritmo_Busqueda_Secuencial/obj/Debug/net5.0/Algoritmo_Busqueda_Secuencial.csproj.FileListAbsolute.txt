@@ -1,0 +1,16 @@
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\bin\Debug\net5.0\Algoritmo_Busqueda_Secuencial.exe
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\bin\Debug\net5.0\Algoritmo_Busqueda_Secuencial.deps.json
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\bin\Debug\net5.0\Algoritmo_Busqueda_Secuencial.runtimeconfig.json
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\bin\Debug\net5.0\Algoritmo_Busqueda_Secuencial.runtimeconfig.dev.json
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\bin\Debug\net5.0\Algoritmo_Busqueda_Secuencial.dll
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\bin\Debug\net5.0\ref\Algoritmo_Busqueda_Secuencial.dll
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\bin\Debug\net5.0\Algoritmo_Busqueda_Secuencial.pdb
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\obj\Debug\net5.0\Algoritmo_Busqueda_Secuencial.csproj.AssemblyReference.cache
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\obj\Debug\net5.0\Algoritmo_Busqueda_Secuencial.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\obj\Debug\net5.0\Algoritmo_Busqueda_Secuencial.AssemblyInfoInputs.cache
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\obj\Debug\net5.0\Algoritmo_Busqueda_Secuencial.AssemblyInfo.cs
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\obj\Debug\net5.0\Algoritmo_Busqueda_Secuencial.csproj.CoreCompileInputs.cache
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\obj\Debug\net5.0\Algoritmo_Busqueda_Secuencial.dll
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\obj\Debug\net5.0\ref\Algoritmo_Busqueda_Secuencial.dll
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\obj\Debug\net5.0\Algoritmo_Busqueda_Secuencial.pdb
+C:\Users\david\source\repos\Algoritmo_Busqueda_Secuencial\Algoritmo_Busqueda_Secuencial\obj\Debug\net5.0\Algoritmo_Busqueda_Secuencial.genruntimeconfig.cache
