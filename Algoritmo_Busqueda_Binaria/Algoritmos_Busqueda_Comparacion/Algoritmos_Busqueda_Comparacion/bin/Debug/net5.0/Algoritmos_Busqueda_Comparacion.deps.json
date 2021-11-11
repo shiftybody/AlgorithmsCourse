@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Algoritmos_Busqueda_Comparacion/1.0.0": {
+        "runtime": {
+          "Algoritmos_Busqueda_Comparacion.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Algoritmos_Busqueda_Comparacion/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
