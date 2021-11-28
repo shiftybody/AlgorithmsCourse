@@ -106,8 +106,8 @@ bool reinasTranversales(int tablero[][N], int filaActual, int columnaActual) {
         if (tablero[iFila][iColumna] == 1) {
             return true;
         }
-    //Comenzamos desde la fila,columna actual; el indiceFila subira hasta llegar a la octava fila (= indice 7 || <=N)
-    // y el indiceColumna bajara hasta llegar al indice 0.
+    //Comenzamos desde la fila, columna actual; el indiceFila subirá hasta llegar a la octava fila ( == indice 7 || <=N)
+    // y el indiceColumna bajará hasta llegar al índice 0.
     for (int iFila = filaActual, iColumna = columnaActual; iFila < N && iColumna >= 0; iFila++, iColumna--) {
         if (tablero[iFila][iColumna] == 1) {
             return true;

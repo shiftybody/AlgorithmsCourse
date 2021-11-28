@@ -1,0 +1,3 @@
+C:/Users/david/Documents/AlgorithmsCourse/orde_Insercion/cmake-build-debug/CMakeFiles/orde_Insercion.dir
+C:/Users/david/Documents/AlgorithmsCourse/orde_Insercion/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/david/Documents/AlgorithmsCourse/orde_Insercion/cmake-build-debug/CMakeFiles/rebuild_cache.dir

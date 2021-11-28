@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "2E+VQEJ70jtn1QrDwn6bO5RmZSsGL5Emiwi2/06ftytXuI4vZk1TjVvEUOcenPGth4r7cn9rivonjPkAb2ySQg==",
-  "success": true,
-  "projectFilePath": "C:\\Users\\david\\source\\repos\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial.csproj",
+  "dgSpecHash": "xb6LkYd9nn2fbJNYAnJuk4SKfUGRrdRH7EN2viT58eg7txWKjTk+289J7odlnWXzQRZOKtl1N5Z34P56I8SZQA==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\david\\Documents\\AlgorithmsCourse\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "No se puede resolver 'Microsoft.NETCore.App.Host.win-x64 (= 5.0.12)' para 'net5.0'.",
+      "libraryId": "Microsoft.NETCore.App.Host.win-x64",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

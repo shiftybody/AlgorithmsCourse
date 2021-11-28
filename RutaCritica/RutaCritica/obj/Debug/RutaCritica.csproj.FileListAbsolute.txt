@@ -1,0 +1,8 @@
+C:\Users\david\Documents\AlgorithmsCourse\RutaCritica\RutaCritica\bin\Debug\RutaCritica.exe.config
+C:\Users\david\Documents\AlgorithmsCourse\RutaCritica\RutaCritica\bin\Debug\RutaCritica.exe
+C:\Users\david\Documents\AlgorithmsCourse\RutaCritica\RutaCritica\bin\Debug\RutaCritica.pdb
+C:\Users\david\Documents\AlgorithmsCourse\RutaCritica\RutaCritica\obj\Debug\RutaCritica.csproj.AssemblyReference.cache
+C:\Users\david\Documents\AlgorithmsCourse\RutaCritica\RutaCritica\obj\Debug\RutaCritica.csproj.SuggestedBindingRedirects.cache
+C:\Users\david\Documents\AlgorithmsCourse\RutaCritica\RutaCritica\obj\Debug\RutaCritica.csproj.CoreCompileInputs.cache
+C:\Users\david\Documents\AlgorithmsCourse\RutaCritica\RutaCritica\obj\Debug\RutaCritica.exe
+C:\Users\david\Documents\AlgorithmsCourse\RutaCritica\RutaCritica\obj\Debug\RutaCritica.pdb

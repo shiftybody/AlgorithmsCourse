@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c93405f7-1151-4269-b8d3-b8cf40d2fdec": {
+      "ProjectGuid": "c93405f7-1151-4269-b8d3-b8cf40d2fdec",
+      "DisplayName": "CalculadoraRutaCritica",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

@@ -1,0 +1,3 @@
+C:/Users/david/CLionProjects/factorialRecursivo/cmake-build-debug/CMakeFiles/factorialRecursivo.dir
+C:/Users/david/CLionProjects/factorialRecursivo/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/david/CLionProjects/factorialRecursivo/cmake-build-debug/CMakeFiles/rebuild_cache.dir

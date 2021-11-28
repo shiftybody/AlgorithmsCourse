@@ -1,0 +1,8 @@
+C:\Users\david\Documents\AlgorithmsCourse\CalculadoraRutaCritica\CalculadoraRutaCritica\bin\Debug\CalculadoraRutaCritica.exe.config
+C:\Users\david\Documents\AlgorithmsCourse\CalculadoraRutaCritica\CalculadoraRutaCritica\bin\Debug\CalculadoraRutaCritica.exe
+C:\Users\david\Documents\AlgorithmsCourse\CalculadoraRutaCritica\CalculadoraRutaCritica\bin\Debug\CalculadoraRutaCritica.pdb
+C:\Users\david\Documents\AlgorithmsCourse\CalculadoraRutaCritica\CalculadoraRutaCritica\obj\Debug\CalculadoraRutaCritica.csproj.AssemblyReference.cache
+C:\Users\david\Documents\AlgorithmsCourse\CalculadoraRutaCritica\CalculadoraRutaCritica\obj\Debug\CalculadoraRutaCritica.csproj.SuggestedBindingRedirects.cache
+C:\Users\david\Documents\AlgorithmsCourse\CalculadoraRutaCritica\CalculadoraRutaCritica\obj\Debug\CalculadoraRutaCritica.csproj.CoreCompileInputs.cache
+C:\Users\david\Documents\AlgorithmsCourse\CalculadoraRutaCritica\CalculadoraRutaCritica\obj\Debug\CalculadoraRutaCritica.exe
+C:\Users\david\Documents\AlgorithmsCourse\CalculadoraRutaCritica\CalculadoraRutaCritica\obj\Debug\CalculadoraRutaCritica.pdb

@@ -1,0 +1,3 @@
+C:/Users/david/Documents/AlgorithmsCourse/Exercise1/cmake-build-debug/CMakeFiles/Exercise1.dir
+C:/Users/david/Documents/AlgorithmsCourse/Exercise1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/david/Documents/AlgorithmsCourse/Exercise1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

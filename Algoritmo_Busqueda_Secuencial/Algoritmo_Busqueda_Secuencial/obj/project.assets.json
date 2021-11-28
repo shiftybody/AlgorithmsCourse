@@ -8,32 +8,23 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\david\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\david\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\david\\source\\repos\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial.csproj",
+      "projectUniqueName": "C:\\Users\\david\\Documents\\AlgorithmsCourse\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial.csproj",
       "projectName": "Algoritmo_Busqueda_Secuencial",
-      "projectPath": "C:\\Users\\david\\source\\repos\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial.csproj",
+      "projectPath": "C:\\Users\\david\\Documents\\AlgorithmsCourse\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial.csproj",
       "packagesPath": "C:\\Users\\david\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\david\\source\\repos\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial\\obj\\",
+      "outputPath": "C:\\Users\\david\\Documents\\AlgorithmsCourse\\Algoritmo_Busqueda_Secuencial\\Algoritmo_Busqueda_Secuencial\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\david\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
-      "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
-      },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
@@ -59,13 +50,30 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.12, 5.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "No se puede resolver 'Microsoft.NETCore.App.Host.win-x64 (= 5.0.12)' para 'net5.0'.",
+      "libraryId": "Microsoft.NETCore.App.Host.win-x64",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }
