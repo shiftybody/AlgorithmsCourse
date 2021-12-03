@@ -5,318 +5,255 @@ namespace RutaCritica
 {
     internal class Program
     {
+        static int cantNodos;
+        static int actividades;
+        static int[,] mAdyacencia;
+        static int nodoInicio;
+        static int nodoFinal;
+        static List<List<int>> Rutas = new List<List<int>>();
+        static List<int> distancias = new List<int>();
 
 
         public static void Main(string[] args)
         {
-            int inicio = 0;
-            int final = 0;
-            int distancia = 0;
-            int x = 0;
-            int y = 0;
-            int cantNodos = 7;   // crear algoritmo para calcular numero de nodos
-            string dato = "";
-            int nodo1 = 0;
 
-            int actual = 0;
-            int columna = 0;
+            int[,] nodeMap = new int[,] {
+                                                                {0,1,3},
+                                                                {0,2,5},
+                                                                {1,3,4},
+                                                                {2,5,9},
+                                                                {3,5,6},
+                                                                {3,4,1},
+                                                                {5,6,12},
+                                                                {4,6,9}};
 
-            /*matriz con las actividades representadas
-            desde el nodo actual, el nodo posterior y la duración. */
+            /*            int[,] nodeMap = new int[,] {
+                                                    {0,1,10},
+                                                    {0,2,8},
+                                                    {1,3,4},
+                                                    {2,1,8},
+                                                    {2,4,5},
+                                                    {3,5,5},
+                                                    {4,3,5},
+                                                    {4,5,7},
+                                                    {5,6,12},
+                                                    {5,7,4},
+                                                    {6,2,7},
+                                                    {5,4,2},
+                                                    {6,7,5}};*/
 
-            int[,] nodeMap = new int[,] {{0,1,3},
-                                         {0,2,5},
-                                         {1,3,4},
-                                         {2,4,9},
-                                         {3,5,1},
-                                         {3,4,6},
-                                         {5,6,9},
-                                         {4,6,12}};
+            actividades = nodeMap.GetLength(0);
+            cantNodos = getCantidadNodos(nodeMap, actividades);
 
-            int aristas = nodeMap.GetLength(0);
+            Console.WriteLine("\n\t" + "aristas: " + actividades + "   nodos: " + cantNodos);
 
-            Grafo graph = new Grafo(cantNodos);
+            initAdjMatix(nodeMap);
+            printAdjMatix();
 
-            /*convertir nodeMap en MatrizdeAdyacencia*/
+            nodoInicio = getInicio();
+            nodoFinal = getFinal();
 
-            int[,] mAdyacencia = new int[cantNodos, cantNodos]; //instancia de la matriz adyacencia
+            Console.WriteLine("\n   nodo Incio: " + nodoInicio + "  nodo Final: " + nodoFinal);
 
-            for (int i = 0; i < aristas; i++) {
-                mAdyacencia[nodeMap[i,0],nodeMap[i,1]] = nodeMap[i,2];
+            printPaths(nodoInicio, nodoFinal);
+            Console.WriteLine("La ruta más corta es: " + getSortedPath() + "\n");
+
+
+        }
+
+        private static String getSortedPath()
+        {
+            int distanciaMin = int.MaxValue;
+            int indiceDistancia = 0;
+
+            foreach (var distancia in distancias)
+            {
+                if (distancia < distanciaMin)
+                {
+
+                    distanciaMin = distancia;
+                    indiceDistancia = distancias.IndexOf(distanciaMin);
+                }
             }
 
-            /*Imprimir mAdyacencia;*/
+            string sortedPath = string.Join(" ", Rutas[indiceDistancia]) + " -> " + distanciaMin;
 
-            for (x = 0; x < cantNodos; x++)
-                Console.Write("\t{0}", x);
+            return sortedPath;
+        }
+
+        private static int getCantidadNodos(int[,] nodeMap, int aristas)
+        {
+            int[] Vector = new int[aristas * 2];
+
+            int Indice = 0;
+
+            for (int i = 0; i < aristas; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    Vector[Indice] = nodeMap[i, j];
+                    Indice++;
+                }
+            }
+
+            Array.Sort(Vector);
+
+
+            int nNodos = 0;
+            for (int i = 0; i < Vector.Length; i++)
+            {
+                while (i < Vector.Length - 1 && Vector[i] == Vector[i + 1])
+                {
+                    i++;
+                }
+                nNodos++;
+            }
+            return nNodos;
+
+        }
+
+        static int getFinal()
+        {
+            int nFinal = 0;
+
+            for (int i = 0; i < cantNodos; i++)
+            {
+                int suma = 0;
+                for (int j = 0; j < cantNodos; j++)
+                {
+                    suma += mAdyacencia[i, j];
+
+                }
+                if (suma == 0)
+                {
+                    nFinal = i;
+                    break;
+                }
+            }
+            return nFinal;
+        }
+
+
+        private static int getInicio()
+        {
+            int nInicio = 0;
+
+            for (int j = 0; j < cantNodos; j++)
+            {
+                int suma = 0;
+
+                for (int i = 0; i < cantNodos; i++)
+                {
+                    suma += mAdyacencia[i, j];
+                }
+                if (suma == 0)
+                {
+                    nInicio = j;
+                    break;
+                }
+            }
+
+            return nInicio;
+        }
+
+        static void initAdjMatix(int[,] nodeMap)
+        {
+            mAdyacencia = new int[cantNodos, cantNodos];
+
+            for (int i = 0; i < actividades; i++)
+            {
+                mAdyacencia[nodeMap[i, 0], nodeMap[i, 1]] = nodeMap[i, 2];
+            }
+        }
+
+        static void printAdjMatix()
+        {
+
+            Console.Write("  ");
+
+            for (int x = 0; x < cantNodos; x++)
+                Console.Write("    " + x);
 
             Console.WriteLine();
 
-            for (x = 0; x < cantNodos; x++)
-            {     
-                Console.Write(x);
+            for (int x = 0; x < cantNodos; x++)
+            {
+                Console.Write(" " + x);
 
-                for (y = 0; y < cantNodos; y++)
+                for (int y = 0; y < cantNodos; y++)
                 {
-                    Console.Write("\t" + mAdyacencia[x, y]);
+                    Console.Write("    " + mAdyacencia[x, y]);
                 }
                 Console.WriteLine();
-
             }
+        }
 
-            graph.AdicionaArista(0, 1, 3);
-            graph.AdicionaArista(0, 2, 5);
-            graph.AdicionaArista(1, 3, 4);
-            graph.AdicionaArista(2, 4, 9);
-            graph.AdicionaArista(3, 5, 1);
-            graph.AdicionaArista(3, 4, 6);
-            graph.AdicionaArista(5, 6, 9);
-            graph.AdicionaArista(4, 6, 12);
+        static void printPaths(int inicio, int final)
+        {
 
-            graph.MuestraAdyacencia();
+            bool[] isVisited = new bool[cantNodos];
+            List<int> listaRutaNodos = new List<int>();
 
-            graph.CalcularIndegree();
-            graph.MostrarIndegree();
+            shortPaths(inicio, final, isVisited, listaRutaNodos);
+            printPaths();
 
-            do
-            {
-                nodo1 = graph.EncuentraI0();
-                if (cantNodos != -1)
-                {
-                    Console.Write(nodo1);
-                    graph.DecrementaIndigree(nodo1);
-                }
+        }
 
-
-            } while (nodo1 != -1);
+        private static void printPaths()
+        {
 
             Console.WriteLine();
-
-
-
-
-            Console.WriteLine("Dame el indice del nodo inicio");
-            dato = Console.ReadLine();
-            inicio = Convert.ToInt32(dato);
-
-            Console.WriteLine("Dame el indice del nodo final");
-            dato = Console.ReadLine();
-            final = Convert.ToInt32(dato);
-
-            //creamos tabla
-            // 0 visitado
-            // 1 distancia
-            // 2 previo
-            int[,] tabla = new int[cantNodos, 3];
-
-            for (x = 0; x < cantNodos; x++)
+            foreach (var ruta in Rutas)
             {
-                tabla[x, 0] = 0;
-                tabla[x, 1] = int.MaxValue;
-                tabla[x, 2] = 0;
-            }
+                int suma = 0;
+                int[] array = ruta.ToArray();
 
-            tabla[inicio, 1] = 0;
-
-            MostrarTabla(tabla);
-
-
-            //algoritmo dijkstra
-            actual = inicio;
-
-            do
-            {
-                //marcar nodo como visitado
-                tabla[actual, 0] = 1;
-
-                for (columna = 0; columna < cantNodos; columna++)
+                for (int i = 1; i < array.GetLength(0); i++)
                 {
+                    Console.Write(array[i - 1] + " ");
 
-                    // buscamos a quien se dirige
-                    if (graph.ObtenerAdyacencia(actual, columna) != 0)
+                    for (int x = 0; x < cantNodos; x++)
                     {
-
-                        //calculamos la distancia  obtener adyacencia es el peso
-                        distancia = graph.ObtenerAdyacencia(actual, columna) + tabla[actual, 1];
-
-                        //colocamos la distanicas
-                        if (distancia < tabla[columna, 1])
+                        for (int y = 0; y < cantNodos; y++)
                         {
-                            tabla[columna, 1] = distancia;
-                            // colocamos la inforamcion de padre;
-                            tabla[columna, 2] = actual;
+                            if (array[i] == y && array[i - 1] == x)
+                            {
+                                suma += mAdyacencia[x, y];
+                            }
                         }
                     }
                 }
 
-                // el nuevo actual es el nodo con la menor distanica que no ha sido visitado
+                Console.Write(array[array.GetLength(0) - 1] + " ");
 
-                int indiceMenor = -1;
-                int distanciaMenor = int.MaxValue;
-
-                for (int j = 0; j < cantNodos; j++)
-                {
-                    if (tabla[j, 1] < distanciaMenor && tabla[j, 0] == 0)
-                    {
-                        indiceMenor = j;
-                        distanciaMenor = tabla[j, 1];
-
-                    }
-                }
-
-                actual = indiceMenor;
-
-            } while (actual != -1);
-
-            MostrarTabla(tabla);
-
-            //obtener la ruta
-            List<int> ruta = new List<int>();
-            int nodo = final;
-
-            while (nodo != inicio)
-            {
-                ruta.Add(nodo);
-                nodo = tabla[nodo, 2];
-
+                distancias.Add(suma);
+                Console.WriteLine("-> " + suma);
             }
-            ruta.Add(inicio);
-
-            ruta.Reverse();
-
-            foreach (int posicion in ruta)
-                Console.Write("{0}->", posicion);
-            Console.Write(distancia);
             Console.WriteLine();
-
         }
 
-        public static void MostrarTabla(int[,] pTabla)
+        static void shortPaths(int nodoActual, int nodoFinal, bool[] isVisited, List<int> listaRutaNodos)
         {
-            int n;
-
-            for (n = 0; n < pTabla.GetLength(0); n++)
+            if (nodoActual == nodoFinal)
             {
-                Console.WriteLine("{0} /> {1}\t{2}\t{3}", n, pTabla[n, 0], pTabla[n, 1], pTabla[n, 2]);
-
-
-            }
-            Console.WriteLine("----------");
-        }
-
-        public class Grafo
-        {
-
-            private int[,] mAdyacencia;
-            private int[] indegree;
-            private int nodos;
-
-            public Grafo(int pNodos)
-            {
-                nodos = pNodos;
-                mAdyacencia = new int[nodos, nodos];
-                indegree = new int[nodos];
-
+                List<int> resultTemp = new List<int>();
+                resultTemp.Add(nodoInicio);
+                resultTemp.AddRange(listaRutaNodos);
+                Rutas.Add(resultTemp);
             }
 
-            public void AdicionaArista(int pNodoInicio, int pNodoFinal, int pPeso)
+            isVisited[nodoActual] = true;
+
+            for (int i = 0; i < cantNodos; i++)
             {
-                mAdyacencia[pNodoInicio, pNodoFinal] = pPeso;
-            }
-
-            public void MuestraAdyacencia()
-            {
-                int n;
-                int m;
-
-                Console.ForegroundColor = ConsoleColor.Yellow;
-
-                for (n = 0; n < nodos; n++)
-                    Console.Write("\t{0}", n);
-
-                Console.WriteLine();
-
-                for (n = 0; n < nodos; n++)
+                if (mAdyacencia[nodoActual, i] >= 1 && !isVisited[i])
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(n);
-
-                    for (m = 0; m < nodos; m++)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.Write("\t{0}", mAdyacencia[n, m]);
-                    }
-                    Console.WriteLine();
-
+                    listaRutaNodos.Add(i);
+                    shortPaths(i, nodoFinal, isVisited, listaRutaNodos);
+                    listaRutaNodos.Remove(i);
                 }
             }
-
-
-            public int ObtenerAdyacencia(int pFila, int pColumna)
-            {
-                return mAdyacencia[pFila, pColumna];
-            }
-
-
-            public void CalcularIndegree()
-            {
-                int n;
-                int m;
-
-                for (n = 0; n < nodos; n++)
-                {
-                    for (m = 0; m < nodos; m++)
-                    {
-                        if (mAdyacencia[m, n] != 0 && mAdyacencia[m, n] != -1)
-                            indegree[n]++;
-                    }
-                }
-            }
-
-            public void MostrarIndegree()
-            {
-                int n;
-                Console.ForegroundColor = ConsoleColor.White;
-                for (n = 0; n < nodos; n++)
-                    Console.WriteLine("Nodo: {0}, {1}", n, indegree[n]);
-            }
-
-            public int EncuentraI0()
-            {
-                bool encontrado = false;
-                int n;
-
-                for (n = 0; n < nodos; n++)
-                {
-                    if (indegree[n] == 0)
-                    {
-                        encontrado = true;
-                        break;
-                    }
-
-                }
-
-                if (encontrado)
-                    return n;
-                else
-                    return -1;
-
-            }
-
-            public void DecrementaIndigree(int pNodo)
-            {
-                indegree[pNodo] = -1;
-
-                int n;
-
-                for (n = 0; n < nodos; n++)
-                {
-                    if (mAdyacencia[pNodo, n] != 0 && mAdyacencia[pNodo, n] != -1)
-                    {
-                        indegree[n]--;
-                    }
-                }
-            }
+            isVisited[nodoActual] = false;
         }
     }
 }
